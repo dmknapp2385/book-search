@@ -30,19 +30,18 @@ const resolvers = {
             if (!correctPw) {
               throw new AuthenticationError('Incorrect credentials');
             }
-      
             const token = signToken(user);
-            return { token, user };
+            return {token, user};
         },
         addUser:  async (parent, args) => {
             const user = await User.create(args);
         
             if (!user) {
-              return res.status(400).json({ message: 'Something is wrong!' });
+              throw new AuthenticationError('Something Went Wrong')
             }
             const token = signToken(user);
-            return ({ token, user });
-          },
+            return {token, user};
+        },
         
     }
 };
