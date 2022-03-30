@@ -1,7 +1,10 @@
 const express = require('express');
 const path = require('path');
+const { ApolloServer } = require('apollo-server-express');
 const db = require('./config/connection');
-const routes = require('./routes');
+// const routes = require('./routes');
+// import schema materias form index.js file here
+// const { typeDefs, resolvers }
 
 const app = express();
 const PORT = process.env.PORT || 3001;
