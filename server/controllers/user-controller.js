@@ -24,8 +24,9 @@ module.exports = {
       return res.status(400).json({ message: 'Something is wrong!' });
     }
     const token = signToken(user);
-    res.json({ token, user });
+    return ({ token, user });
   },
+
   // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
   async login({ body }, res) {
