@@ -42,7 +42,32 @@ const resolvers = {
             const token = signToken(user);
             return {token, user};
         },
-        
+        addBook: async(parent, args, context) => {
+            if(context.user) {
+
+              const updatedUser = await User.findOneAndUpdate(
+                { _id: context.user._id },
+                { $addToSet: { savedBooks: args } },
+                { new: true, runValidators: true }
+              );
+              return updatedUser;
+            } 
+
+            throw new AuthenticationError('User Not Logged In')
+          },
+        removeBook: async(parent, { bookId }, context) => {
+          if(context.user) {
+            const updatedUser = await User.findOneAndUpdate(
+              {_id: context.user.id},
+              {$pull: { savedBooks: { bookId: bookId}}},
+              {new: true}
+            );
+            if(!updatedUser) {
+              throw new AuthenticationError ('Couldnt find user with that Id')
+            }
+            return updatedUser;
+          }
+        }
     }
 };
 
