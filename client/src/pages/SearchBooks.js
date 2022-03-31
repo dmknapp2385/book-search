@@ -66,7 +66,6 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-    console.log('book to save', bookToSave);
 
     try {
       await addBook({

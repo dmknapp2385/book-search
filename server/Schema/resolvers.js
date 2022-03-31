@@ -6,7 +6,7 @@ const resolvers = {
     Query: {
         me: async (parent, args, context ) => {
             if(context.user){
-              console.log('in me query')
+              console.log('me query called')
             const user = await User.findOne({ _id: context.user._id
             });
         
@@ -44,7 +44,6 @@ const resolvers = {
         },
         addBook: async(parent, args, context) => {
             if(context.user) {
-              console.log(args, 'from withing addbook')
               const updatedUser = await User.findOneAndUpdate(
                 { _id: context.user._id },
                 { $addToSet: { savedBooks: args } },
