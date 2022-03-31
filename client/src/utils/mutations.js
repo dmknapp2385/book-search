@@ -68,4 +68,5 @@ export const REMOVE_BOOK = gql`
       username
       bookCount
   }
+}
 `;
