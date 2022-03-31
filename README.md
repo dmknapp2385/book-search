@@ -8,7 +8,7 @@
 A simple search engine that uses graphQl queries to save books to a user's account. Books can be added and removed. The page is a single page web application built using React.js and google books as a third party api.
 
     
-![](/images/search.png)
+![image of search engine](/search.png)
   
 
 
@@ -47,7 +47,7 @@ Please direct any questions to dmknapp2385@gmail.com or visit my [GitHub](https:
 ## License
 This projects is protected under [MIT](license.txt).
 
-Copyright <2022> <Danielle Knapp>
+Copyright 2022 Danielle Knapp
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
