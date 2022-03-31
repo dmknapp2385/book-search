@@ -27,13 +27,9 @@ const LoginForm = () => {
     }
 
     try {
-      const {response} = await login({variables: {...userFormData}});
-
-      if (!response.ok) {
-        throw new Error('something went wrong!');
-      }
-      console.log('response from login', response)
-      Auth.login(response.login.token);
+      const { data } = await login({variables: {...userFormData}});
+      // add return token to local storage to retrieve from other pages
+      Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
       setShowAlert(true);
