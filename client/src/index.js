@@ -7,10 +7,10 @@ import { ApolloProvider } from '@apollo/client';
 
 
 ReactDOM.render(
-  <React.StrictMode>
     <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </React.StrictMode>,
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ApolloProvider>,
   document.getElementById('root'),
 );
