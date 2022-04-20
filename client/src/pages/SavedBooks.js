@@ -21,11 +21,11 @@ const SavedBooks = () => {
  
     try {
       await removeBook({
-        variables: { bookId: bookId}
+        variables: { bookId: bookId},
+        refetchQueries: [GET_ME, 'me']
       });
+
       
-      // upon success, remove book's id from localStorage
-      removeBookId(bookId);
     } catch (err) {
       console.error(err);
     }
